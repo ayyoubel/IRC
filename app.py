@@ -142,38 +142,7 @@ def draw_line_between_points(image, point1, point2, line_color='black', line_wid
 def create_white_image(width, height):
     return Image.new('RGB', (width, height), color='white')
 
-image_path = 'r.png'  # Replace with your image path
-symbol_grid = create_symbol_grid(image_path)
 
-# Example usage (assuming you have the `symbol_grid` from a previous code):
-modified_grid = modify_list(symbol_grid)        
-
-# Example maze
-# Exemple de labyrinthe
-maze5 = modified_grid
-
-shortest_path5 = a_star(maze5)
-
-if shortest_path5:
-    #print("Le chemin le plus court est :", shortest_path5)
-    print_solution(maze5, shortest_path5)
-else:
-    print("Aucun chemin trouvé.")
-    
-to_reality = []
-for i in range(len(shortest_path5)):
-    to_reality.append((shortest_path5[i][1]*12+1,shortest_path5[i][0]*12+1))
-    
-
-existing_image = create_white_image(288, 192) 
-
-for i in range(len(to_reality)-1):
-    point1 = to_reality[i]
-    point2 = to_reality[i+1]
-    draw_line_between_points(existing_image, point1, point2)
-
-existing_image.save('solution.png')
-existing_image
 
 
 
