@@ -1,4 +1,4 @@
-import streamlit as stcreate_symbol_grid
+import streamlit as st
 from PIL import Image, ImageDraw
 from io import BytesIO
 
