@@ -1,4 +1,4 @@
-import streamlit as st
+import streamlit as stcreate_symbol_grid
 from PIL import Image, ImageDraw
 from io import BytesIO
 
@@ -178,7 +178,7 @@ def process_image(input_image):
         to_reality.append((shortest_path5[i][1]*12,shortest_path5[i][0]*12))
         
 
-    existing_image = create_white_image(288, 192) 
+    existing_image = create_white_image((len(symbol_grid[0])-1)*12, (len(symbol_grid)-1)*12) #her
 
     for i in range(len(to_reality)-1):
         point1 = to_reality[i]
